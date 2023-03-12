@@ -7,12 +7,19 @@
 
 
 def aragrama(string1, string2): # CREO UNA FUNCION LLAMADA "ANAGRAMA" QUE RECIBE COMO PARAMETRO DOS STRINGS
-    if string1 == string2: # SI SON DOS PALABRAS EXACTAMENTE IGUALES NO ES ANAGRAMA
-        print("Son dos palabras iguales")
-    elif sorted (string1) == sorted(string2): # LLAMO A SORTED QUE ME ITERA CARACTER POR CARACTER Y LE DIGO QUE SI SON IGUALES PRINTEE VERDADERO
-        print("verdadero")
+    if string1.lower() == string2.lower(): # SI SON DOS PALABRAS EXACTAMENTE IGUALES NO ES ANAGRAMA
+        return False
+    elif sorted (string1.lower()) == sorted(string2.lower()): # LLAMO A SORTED QUE ME ITERA CARACTER POR CARACTER Y LE DIGO QUE SI SON IGUALES PRINTEE VERDADERO
+        print("True")
     else:
-       print("false") # SI NO SON LOS MISMOS CARACTERES NO ES UN ANAGRAMA
+       print("False") # SI NO SON LOS MISMOS CARACTERES NO ES UN ANAGRAMA
+
+aragrama("casa", "casa") #LLAMO A MI FUNCION Y LE PASO DOS STRINGS PARA COMPRARAR
 
 
-aragrama("papiro", "piparo") #LLAMO A MI FUNCION Y LE PASO DOS STRINGS PARA COMPRARAR
+def is_anagrama(word_one, word_two):
+    if word_one.lower() == word_two.lower():
+        return False
+    return sorted(word_one.lower()) == sorted(word_two.lower())
+
+print(is_anagrama("casa", "casa"))
